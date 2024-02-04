@@ -1,0 +1,20 @@
+<!-- base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <meta charset="UTF-8">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    
+    {% block extrahead %}{% endblock %}
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- index.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block extrahead %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <h1>Aparches MMD List</h1>
+    </div>
+
+    {% for mmdinfo in mmdlist %}
+        <p>
+            <div class="border border-dark p-2 m-3 rounded border-1 border-opacity-50">
+                {{mmdinfo.Title}}, {{mmdinfo.Artist}}
+            </div>
+        </p>
+    {% endfor %}
+{% endblock %}
